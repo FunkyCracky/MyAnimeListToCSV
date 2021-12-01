@@ -6,5 +6,5 @@ This small project fetches your list from MyAnimeList and returns a CSV file tha
 
 ## For the future
 
-- Expand to other platforms
+- Expand to other platforms (AniList, AnimePlanet, etc.)
 - Allow fetching of manga lists
