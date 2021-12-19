@@ -1,10 +1,6 @@
 from abc import ABC, abstractmethod
 
 class Data(ABC):
-    @abstractmethod
-    def get_element(self):
-        pass
-
     def get_header(self):
         return self.header
 
