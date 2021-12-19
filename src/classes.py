@@ -2,10 +2,6 @@ from abc import ABC, abstractmethod
 
 class Data(ABC):
     @abstractmethod
-    def __init__(self) -> None:
-        pass
-
-    @abstractmethod
     def get_element(self):
         pass
 
@@ -20,7 +16,6 @@ class Data(ABC):
 
 class AnimeData(Data):
     def __init__(self) -> None:
-        super().__init__()
         self.status = {1: "Watching", 2: "Completed", 3: "On Hold", 4: "Dropped", 6: "PTW"}
         self.header = ["Title", "Status", "Score", "Eps. watched", "Start date", "End date", "Season", "Year", "Genres"]
 
@@ -37,7 +32,6 @@ class AnimeData(Data):
 
 class MangaData(Data):
     def __init__(self) -> None:
-        super().__init__()
         self.status = {1: "Reading", 2: "Completed", 3: "On Hold", 4: "Dropped", 6: "PTR"}
         self.header = ["Title", "Status", "Score", "Chaps. read", "Vols. read", "Start date", "End date", "Type", "Genres"]
 
