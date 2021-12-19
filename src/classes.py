@@ -11,6 +11,12 @@ class Data(ABC):
     def get_size(self):
         return len(self.table)   
 
+    def get_genres(self, i):
+        genres = ""
+        for genre in self.table[i]["genres"]:
+            genres += genre["name"] + ", "
+        return genres[:-2]
+
     def set_table(self, table):
         self.table = table
 
@@ -28,7 +34,7 @@ class AnimeData(Data):
                self.table[i]["watch_end_date"][:10] if self.table[i]["watch_end_date"] != None else "",
                str(self.table[i]["season_name"]) + " " + str(self.table[i]["season_year"]) if self.table[i]["season_year"] != None else "",
                self.table[i]["season_year"] if self.table[i]["season_year"] != None else "",
-               get_genres(self.table[i])]
+               self.get_genres(i)]
 
 class MangaData(Data):
     def __init__(self) -> None:
@@ -44,10 +50,4 @@ class MangaData(Data):
                self.table[i]["start_date"][:10] if self.table[i]["start_date"] != None else "", 
                self.table[i]["end_date"][:10] if self.table[i]["end_date"] != None else "",
                self.table[i]["type"],
-               get_genres(self.table[i])]
-
-def get_genres(el):
-    genres = ""
-    for genre in el["genres"]:
-        genres += genre["name"] + ", "
-    return genres[:-2]
+               self.get_genres(self.table[i])]
