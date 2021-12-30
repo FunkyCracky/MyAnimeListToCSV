@@ -6,3 +6,4 @@ This small project fetches your anime or manga list from MyAnimeList and returns
 
 - Expand to other platforms (AniList, AnimePlanet, etc.)
 - Provide more detailed explanations on each request error code
+- Create an executable file
