@@ -41,9 +41,11 @@ def main():
                 break
             page += 1
         except requests.exceptions.Timeout:
-            for i in range(4, 0, -1):
+            for i in range(4, 1, -1):
                 print("The API didn't respond. Trying again in " + str(i) + " seconds...", end = "\r")
                 sleep(1)
+            print("The API didn't respond. Trying again in 1 second...", end = "\r")
+            sleep(1)
             print("\nLet's try again!")
     print("Done! Go to the main folder and check the file " + out_name + ".csv!")
     out.close()
