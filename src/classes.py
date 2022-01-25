@@ -3,11 +3,9 @@ import requests
 
 class Data(ABC):
     
-    @abstractmethod
     def request(self, username, list_type):
         return requests.get("https://api.jikan.moe/v4/users/{}/{}".format(username, list_type), timeout = 6)
 
-    @abstractmethod
     def set_table(self, content, key):
         self.table = json.loads(content)[key]
 
